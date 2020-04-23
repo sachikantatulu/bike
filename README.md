@@ -1,16 +1,33 @@
-# Getting Started
+# bike
+simple spring-boot application for bike registry system with create and view operations.
+# Requirements
+For building and running the application you need:
+    • JDK 1.8
+    • Maven 3
+Running the application locally
+There are several ways to run a Spring Boot application on your local machine. One way is to execute the main method in the com.fujitsu.bike.BikeApplication.Application class from your IDE.
+Alternatively you can use the Spring Boot Maven plugin like so:
+mvn spring-boot:run
 
-### Reference Documentation
-For further reference, please consider the following sections:
+### bike URLs
+Check with postman
+|  URL |  Method | Remarks |
+|----------|--------------|--------------|
+|`http://localhost:8080/api/v1/bikes`                           | GET | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|
+|`http://localhost:8080/api/v1/bikes/1`                       | GET | |
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/maven-plugin/)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
 
-### Guides
-The following guides illustrate how to use some features concretely:
+- `models` — to hold our entities;
+- `repositories` — to communicate with the database;
+- `controllers` — to listen to the client;
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+- `resources/` - Contains all the static resources, templates and property files.
+- `resources/application.properties` - It contains application-wide properties. Spring reads the properties defined in this file to configure your application. You can define server’s default port, server’s context path, database URLs etc, in this file.
 
+- `test/` - contains unit and integration tests
+
+- `pom.xml` - contains all the project dependencies
+
+## Copyright
+
+Released under the Apache License 2.0. See the [LICENSE](https://github.com/sachikantatulu/bike/master/LICENSE) file.
